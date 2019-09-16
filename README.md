@@ -26,7 +26,7 @@
 
 以下为短视频安卓版部分功能系统截图
 
-![](https://gitee.com/qwsem/short-video/blob/master/screenshot/1.png)
-![](https://gitee.com/qwsem/short-video/blob/master/screenshot/2.png)
-![](https://gitee.com/qwsem/short-video/blob/master/screenshot/3.png)
-![](https://gitee.com/qwsem/short-video/blob/master/screenshot/4.png)
+![](https://gitee.com/qwsem/short-video/raw/master/screenshot/1.png)
+![](https://gitee.com/qwsem/short-video/raw/master/screenshot/2.png)
+![](https://gitee.com/qwsem/short-video/raw/master/screenshot/3.png)
+![](https://gitee.com/qwsem/short-video/raw/master/screenshot/4.png)
