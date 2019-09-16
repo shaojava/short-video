@@ -1,7 +1,11 @@
 # short-video
 
 #### 介绍
-仿抖音短视频安卓版源码
+仿抖音短视频安卓版源码 
+
+[IOS版地址](https://gitee.com/qwsem/short-video-ios/)
+
+[后台源码](https://gitee.com/qwsem/web/)
 
 官网：[http://www.china-zhizao.com](http://www.china-zhizao.com/)
 
