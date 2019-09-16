@@ -1,0 +1,139 @@
+apply plugin: 'com.android.application'
+apply plugin: 'bugly'
+
+
+
+bugly {
+    appId = '<9167594337>' // 注册时分配的App ID
+    appKey = '<59668eb1-a56a-4634-92cf-58a84044e37c>' // 注册时分配的App Key
+    debug = false
+}
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "28.0.3"
+    signingConfigs {
+        release {
+            keyAlias 'phonelive'
+            keyPassword 'phonelive'
+            storeFile file('../yunbao.jks')
+            storePassword 'phonelive'
+        }
+
+    }
+
+    aaptOptions {
+        cruncherEnabled false
+        useNewCruncher false
+    }
+
+    defaultConfig {
+        applicationId "com.yunbao.phonelive"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 5
+        versionName "3.0.6"
+        multiDexEnabled true
+        /*ndk {
+            abiFilters "armeabi", "armeabi-v7a"
+        }*/
+        maxSdkVersion 26
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            shrinkResources false
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+
+    packagingOptions {
+        exclude 'AUTHORS'
+        exclude 'META-INF/AUTHORS.txt'
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+    configurations {
+        all {
+            exclude module: 'commons-logging'
+        }
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs', '../libs', '../jpush/libs', '../sharedsdk/libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation "com.android.support:recyclerview-v7:${var}"
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    //极光推送
+    //使用sharedsdk进行第三方登录，分享
+    //使用Glide加载图片
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    //使用okgo进行http网络请求
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.lzy.net:okgo:3.0.4'
+    //fastJson解析json
+    implementation 'com.alibaba:fastjson:1.2.58'
+    //eventbus事件总线
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'com.android.support:multidex:1.0.1'
+    //首页轮播图
+    implementation 'com.youth.banner:banner:1.4.9'
+    //带圆角，边框的的ImageView
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    //腾讯bugly
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    implementation 'com.tencent.bugly:symtabfileuploader:latest.release'
+
+    //gif动画库
+    //腾讯短视频sdk
+    implementation project(':video')
+    implementation(name: 'LiteAVSDK_UGC_4.4.3774', ext: 'aar')
+    //微信支付,登录
+    implementation files('libs/libammsdk.jar')
+    //七牛云
+    implementation 'com.qiniu:qiniu-android-sdk:7.3.15'
+    //一个Picker控件，选择日期，城市用
+    implementation files('libs/AndroidPicker-1.5.6.jar')
+    implementation files('libs/commons-io-1.4.jar')
+    //萌颜
+    implementation(name: 'ti-sdk', ext: 'aar')
+    implementation project(':beauty')
+    //gif动画库
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.10'
+    //leakcanary检测内存泄露
+    //debugimplementation 'com.squareup.leakcanary:leakcanary-android:1.5'
+    //releaseimplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    //腾讯定位，地图sdk
+    implementation files('libs/TencentLocationSdk_v6.2.5.3.jar')
+    implementation files('libs/TencentMapSDK_1.2.8.1.jar')
+    //百度语音识别
+    implementation files('libs/bdasr_3.0.7.3.jar')
+
+    //debugimplementation 'com.squareup.leakcanary:leakcanary-android:1.5'
+    //releaseimplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    //testimplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.7'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    api project(path: ':sharedsdk')
+    api project(path: ':jpush')
+
+}

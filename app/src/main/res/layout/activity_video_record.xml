@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="5dp"
+                android:onClick="backClick"
+                android:padding="7dp"
+                android:src="@mipmap/icon_back"
+                />
+
+            <ImageView
+                android:id="@+id/btn_camera"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="15dp"
+                android:onClick="recordClick"
+                android:padding="7dp"
+                android:src="@mipmap/icon_record_camera"
+                />
+
+            <ImageView
+                android:id="@+id/btn_flash"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/btn_camera"
+                android:onClick="recordClick"
+                android:padding="7dp"
+                android:src="@mipmap/icon_record_flash_close"
+                />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            >
+
+            <com.yunbao.phonelive.custom.AnimImageView
+                android:id="@+id/btn_record"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:onClick="recordClick"
+                android:scaleType="fitXY"
+                android:src="@mipmap/icon_record_00"
+                app:srcId="@mipmap/icon_record_00"
+                app:interval="40"
+                />
+
+            <com.yunbao.phonelive.custom.ImageTextView
+                android:id="@+id/btn_upload"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:onClick="recordClick"
+                app:imageSrc="@mipmap/icon_record_upload"
+                app:imageWidth="30dp"
+                app:text1="@string/upload"
+                app:textColor1="#fff"
+                app:textHeight="16dp"
+                app:textSize1="12sp"
+                />
+
+            <com.yunbao.phonelive.custom.ImageTextView
+                android:id="@+id/btn_beauty"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/btn_upload"
+                android:onClick="recordClick"
+                app:imageSrc="@mipmap/icon_record_beauty"
+                app:imageWidth="30dp"
+                app:text1="@string/beauty"
+                app:textColor1="#fff"
+                app:textHeight="16dp"
+                app:textSize1="12sp"
+                />
+
+            <TextView
+                android:id="@+id/btn_next"
+                android:layout_width="70dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/bg_record_next"
+                android:enabled="false"
+                android:gravity="center"
+                android:onClick="recordClick"
+                android:text="@string/next"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                />
+
+        </RelativeLayout>
+
+        <com.yunbao.phonelive.custom.record.RecordProgressView
+            android:id="@+id/record_progress_view"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_above="@id/bottom"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            />
+
+        <TextView
+            android:id="@+id/progress_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/record_progress_view"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="5dp"
+            android:paddingRight="15dp"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            />
+
+
+    </RelativeLayout>
+</RelativeLayout>

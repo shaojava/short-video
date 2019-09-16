@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    >
+
+    <FrameLayout
+        android:id="@+id/replaced"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        >
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/btn_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_home_btn"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/recommend"
+                android:textColor="@color/fg_home_btn"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+
+            <RadioButton
+                android:id="@+id/btn_hot"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bg_home_btn"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/hot"
+                android:textColor="@color/fg_home_btn"
+                android:textSize="17sp"
+                />
+
+            <RadioButton
+                android:id="@+id/btn_near"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bg_home_btn"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/near"
+                android:textColor="@color/fg_home_btn"
+                android:textSize="17sp"
+                />
+
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/btn_search"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:onClick="mainClick"
+            android:padding="13dp"
+            android:src="@mipmap/icon_search"
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>

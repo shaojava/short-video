@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+    >
+
+    <View
+        android:id="@+id/btn_hide"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <LinearLayout
+        android:id="@+id/group_cut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#80333333"
+        android:orientation="vertical"
+        android:clickable="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:padding="3dp"
+                android:src="@mipmap/icon_music"
+                />
+
+            <TextView
+                android:id="@+id/music_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:id="@+id/btn_cancel_music"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp"
+                android:text="@string/cancel2"
+                android:textColor="@color/global"
+                android:textSize="14sp"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/cut_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:gravity="center_horizontal"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:src="@mipmap/bgm_wave_voice"
+                />
+
+            <com.yunbao.phonelive.custom.RangeSlider
+                android:id="@+id/bgm_range_slider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:leftThumbDrawable="@drawable/ic_progress_left"
+                app:leftThumbIndex="0"
+                app:lineColor="@color/global"
+                app:lineHeight="2dp"
+                app:rightThumbDrawable="@drawable/ic_progress_right"
+                app:thumbWidth="10dp"
+                app:tickCount="100"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#80333333"
+        android:orientation="vertical"
+        android:clickable="true"
+        >
+
+        <com.yunbao.phonelive.custom.TextSeekBar
+            android:id="@+id/seek_original"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            app:progressVal="80"
+            app:text2="@string/music_original"
+            />
+
+        <com.yunbao.phonelive.custom.TextSeekBar
+            android:id="@+id/seek_bgm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:progressVal="80"
+            app:text2="@string/music_bgm"
+            />
+
+    </LinearLayout>
+</LinearLayout>

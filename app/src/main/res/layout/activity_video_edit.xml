@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    >
+
+    <FrameLayout
+        android:id="@+id/video_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="5dp"
+                android:onClick="backClick"
+                android:padding="7dp"
+                android:src="@mipmap/icon_back"
+                />
+
+            <com.yunbao.phonelive.custom.ImageTextView
+                android:id="@+id/btn_music"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:onClick="editClick"
+                app:imageSrc="@mipmap/icon_record_music"
+                app:imageWidth="24dp"
+                app:text1="@string/choose_music_2"
+                app:textColor1="#fff"
+                app:textHeight="16dp"
+                app:textSize1="12sp"
+                />
+
+            <com.yunbao.phonelive.custom.ImageTextView
+                android:id="@+id/btn_music_volume"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@id/btn_music"
+                android:onClick="editClick"
+                app:imageSrc="@mipmap/icon_record_music_volume"
+                app:imageWidth="24dp"
+                app:text1="@string/music_volume"
+                app:textColor1="#fff"
+                app:textHeight="16dp"
+                app:textSize1="12sp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            >
+
+            <com.yunbao.phonelive.custom.ImageTextView
+                android:id="@+id/btn_special"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:onClick="editClick"
+                app:imageSrc="@mipmap/icon_record_special"
+                app:imageWidth="30dp"
+                app:text1="@string/special"
+                app:textColor1="#fff"
+                app:textHeight="16dp"
+                app:textSize1="12sp"
+                />
+
+            <com.yunbao.phonelive.custom.ImageTextView
+                android:id="@+id/btn_cover"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/btn_special"
+                android:onClick="editClick"
+                app:imageSrc="@mipmap/icon_record_cover"
+                app:imageWidth="30dp"
+                app:text1="@string/cover"
+                app:textColor1="#fff"
+                app:textHeight="16dp"
+                app:textSize1="12sp"
+                android:visibility="gone"
+                />
+
+            <com.yunbao.phonelive.custom.ImageTextView
+                android:id="@+id/btn_filter"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/btn_cover"
+                android:onClick="editClick"
+                app:imageSrc="@mipmap/icon_record_filter"
+                app:imageWidth="30dp"
+                app:text1="@string/filter"
+                app:textColor1="#fff"
+                app:textHeight="16dp"
+                app:textSize1="12sp"
+                />
+
+            <TextView
+                android:id="@+id/btn_next"
+                android:layout_width="70dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/bg_record_next"
+                android:gravity="center"
+                android:onClick="editClick"
+                android:text="@string/next"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/btn_play"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/icon_play"
+        />
+</RelativeLayout>

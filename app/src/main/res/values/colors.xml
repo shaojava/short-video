@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/global</color>
+    <color name="colorPrimaryDark">@color/global</color>
+    <color name="colorAccent">@color/global</color>
+
+    <color name="global">#ea377f</color>
+    <color name="background">#110d24</color>
+    <color name="transparent">#00000000</color>
+    <color name="black1">#15102C</color>
+    <color name="black2">#34304D</color>
+    <color name="black3">#2C2840</color>
+    <color name="black4">#1F1D35</color>
+    <color name="black5">#2B2A3F</color>
+    <color name="gray1">#6e6e6e</color>
+    <color name="gray2">#909090</color>
+    <color name="gray3">#969696</color>
+    <color name="lineColor">#1affffff</color>
+    <color name="adversting_button_color">#4722d8</color>
+</resources>

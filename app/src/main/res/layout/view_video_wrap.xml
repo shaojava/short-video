@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <RelativeLayout
+        android:id="@+id/cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000"
+        >
+
+        <ImageView
+            android:id="@+id/coverImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/bg_video_shadow_top"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/bg_video_shadow_bottom"
+        />
+
+    <com.yunbao.phonelive.custom.MusicAnimLayout
+        android:id="@+id/music_anim"
+        android:layout_width="90dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="47dp"
+        android:translationX="4dp"
+        />
+
+    <LinearLayout
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/music_anim"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/avatar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:riv_border_color="#fff"
+                app:riv_border_width="1dp"
+                app:riv_oval="true"
+                android:scaleType="centerCrop"
+                />
+
+            <ImageView
+                android:id="@+id/btn_follow"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="36dp"
+                android:src="@mipmap/icon_video_unfollow"
+                />
+
+        </RelativeLayout>
+
+        <com.yunbao.phonelive.custom.FrameAnimImageView
+            android:id="@+id/btn_zan"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@mipmap/icon_video_zan_01"
+            />
+
+        <TextView
+            android:id="@+id/zan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:translationY="-5dp"
+            />
+
+        <ImageView
+            android:id="@+id/btn_comment"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/icon_video_comment"
+            />
+
+        <TextView
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:translationY="-5dp"
+            />
+
+        <ImageView
+            android:id="@+id/btn_share"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/icon_video_share"
+            />
+
+        <TextView
+            android:id="@+id/share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:translationY="-5dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="56dp"
+        android:layout_marginLeft="10dp"
+        >
+        <TextView
+            android:layout_width="39dp"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="广告"
+            android:visibility="gone"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:textSize="12dp"
+            android:id="@+id/tv_adversting_tag"
+            android:background="@drawable/bg_gray"
+            android:layout_marginBottom="10dp"
+            />
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/title"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="150dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+
+        <com.yunbao.phonelive.custom.EllipsizedTextView
+            android:id="@+id/title"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="150dp"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:maxLines="2"
+            />
+
+        <LinearLayout
+            android:id="@+id/music_title_group"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginRight="150dp"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/icon_record_music"
+                />
+
+            <com.yunbao.phonelive.custom.MarqueeTextView
+                android:id="@+id/music_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

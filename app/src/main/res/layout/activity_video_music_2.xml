@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/view_title"
+    />
+
+    <TextView
+        android:id="@+id/btn_start_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="33dp"
+        android:text="@string/start_record_2"
+        android:textColor="@color/global"
+        android:textSize="16sp"
+    />
+
+
+    <LinearLayout
+        android:id="@+id/search_group"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_below="@id/title"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bg_search_input"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+    >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:src="@mipmap/icon_search"
+            android:tint="@color/gray1"
+        />
+
+        <EditText
+            android:id="@+id/search_input"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/search_music_input"
+            android:imeActionLabel="@string/search"
+            android:imeOptions="actionSearch"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textColorHint="@color/gray1"
+            android:textSize="16sp"
+        />
+
+        <ImageView
+            android:id="@+id/btn_clear"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:src="@mipmap/icon_search_clear"
+        />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/musicClass"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/search_group"
+        android:layout_marginTop="20dp"
+    />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/musicClass"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+    >
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+        />
+
+        <RadioButton
+            android:id="@+id/btn_hot_music"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="@string/hot_music"
+            android:textColor="@color/fg_check_music"
+        />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="3dp"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/icon_music_top"
+        />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+        />
+
+        <RadioButton
+            android:id="@+id/btn_my_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/my_collect"
+            android:textColor="@color/fg_check_music"
+        />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+        />
+    </RadioGroup>
+
+    <RelativeLayout android:id="@+id/bottom_group" android:layout_width="fill_parent" android:layout_height="80.0dip" android:layout_alignParentBottom="true">
+        <View android:background="@color/lineColor" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="64.0dip" android:layout_marginTop="13.0dip">
+            <com.yunbao.phonelive.custom.ImageTextView
+                android:id="@id/btn_start_record" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" app:imageSrc="@mipmap/icon_start_record" app:imageWidth="44.0dip" app:text1="@string/start_record_2" app:textColor1="@color/global" app:textHeight="20.0dip" app:textSize1="14.0sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bottom_group"
+        android:layout_marginTop="10dp">
+
+        <com.yunbao.phonelive.custom.RefreshView
+            android:id="@+id/hotRefreshView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:enableLoadMore="false"
+            app:enableRefresh="false" />
+
+        <com.yunbao.phonelive.custom.RefreshView
+            android:id="@+id/collectRefreshView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            android:visibility="invisible"
+            app:enableLoadMore="false"
+            app:enableRefresh="true" />
+
+    </RelativeLayout>
+
+    <com.yunbao.phonelive.custom.RefreshView
+        android:id="@+id/searchRefreshView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_group"
+        android:layout_marginTop="20dp"
+        android:background="@color/background"
+        android:visibility="invisible"
+        app:enableLoadMore="false"
+        app:enableRefresh="false"
+    />
+
+    <LinearLayout
+        android:id="@+id/classGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:clickable="true"
+    >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp">
+
+            <TextView
+                android:id="@+id/classTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:background="@color/background"
+                android:gravity="center_horizontal"
+                android:paddingTop="30dp"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/btn_class_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="5dp"
+                android:onClick="backClick"
+                android:padding="7dp"
+                android:src="@mipmap/icon_back"/>
+
+        </RelativeLayout>
+        <com.yunbao.phonelive.custom.RefreshView
+            android:id="@+id/classRefreshView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:enableLoadMore="false"
+            app:enableRefresh="false"
+        />
+    </LinearLayout>
+
+
+</RelativeLayout>

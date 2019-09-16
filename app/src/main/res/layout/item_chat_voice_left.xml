@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="20dp"
+    android:paddingTop="10dp"
+    >
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:textColor="@color/gray3"
+        android:textSize="13sp"
+        android:visibility="gone"
+        />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/time"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="5dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:scaleType="centerCrop"
+        app:riv_oval="true"
+        />
+
+    <com.yunbao.phonelive.custom.BubbleLayout
+        android:id="@+id/bubbleLayout"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@id/avatar"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/avatar"
+        android:paddingLeft="10dp"
+        app:arrowHeight="5dp"
+        app:arrowPositionY="20dp"
+        app:arrowWidth="10dp"
+        app:bubbleBgColor="#2c2840"
+        app:bubbleRadius="5dp"
+        >
+
+        <com.yunbao.phonelive.custom.AnimImageView
+            android:id="@+id/voice_anim_view"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/icon_voice_left_3"
+            app:interval="150"
+            app:srcId="@mipmap/icon_voice_left_3"
+            />
+    </com.yunbao.phonelive.custom.BubbleLayout>
+
+    <View
+        android:id="@+id/red_point"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_alignTop="@id/bubbleLayout"
+        android:layout_toRightOf="@id/bubbleLayout"
+        android:background="@drawable/bg_red_point"
+        />
+
+    <TextView
+        android:id="@+id/duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/bubbleLayout"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@id/bubbleLayout"
+        android:textColor="@color/gray3"
+        android:textSize="14sp"
+        />
+
+</RelativeLayout>

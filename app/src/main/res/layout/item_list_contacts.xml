@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="@color/black1"
+    >
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/avatar"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        app:riv_oval="true"
+        />
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="22dp"
+        android:layout_toRightOf="@id/avatar"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@id/avatar"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/gray3"
+        android:textSize="13sp"
+        />
+
+
+    <View
+        android:id="@+id/line"
+        style="@style/line"
+        android:layout_alignParentBottom="true"
+        />
+
+
+</RelativeLayout>

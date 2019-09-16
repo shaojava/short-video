@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_share"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="28dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"
+            android:text="@string/share_to"
+            android:textColor="@color/gray1"
+            android:textSize="14sp"
+            />
+
+        <ImageView
+            android:id="@+id/btn_close"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/icon_share_close"
+            />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:overScrollMode="never"
+        />
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        >
+
+        <com.yunbao.phonelive.custom.ImageTextView
+            android:id="@+id/btn_report"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:imageSrc="@mipmap/icon_share_report"
+            app:imageWidth="50dp"
+            app:text1="@string/report"
+            app:textColor1="@color/gray1"
+            app:textHeight="20dp"
+            app:textSize1="14sp"
+            />
+
+        <com.yunbao.phonelive.custom.ImageTextView
+            android:id="@+id/btn_copy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:imageSrc="@mipmap/icon_share_copy"
+            app:imageWidth="50dp"
+            app:text1="@string/copy"
+            app:textColor1="@color/gray1"
+            app:textHeight="20dp"
+            app:textSize1="14sp"
+            />
+
+        <com.yunbao.phonelive.custom.ImageTextView
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:imageSrc="@mipmap/icon_share_save"
+            app:imageWidth="50dp"
+            app:text1="@string/save"
+            app:textColor1="@color/gray1"
+            app:textHeight="20dp"
+            app:textSize1="14sp"
+            />
+
+
+        <com.yunbao.phonelive.custom.ImageTextView
+            android:id="@+id/btn_black"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            app:imageSrc="@mipmap/icon_share_black"
+            app:imageWidth="50dp"
+            app:text1="@string/black"
+            app:textColor1="@color/gray1"
+            app:textHeight="20dp"
+            app:textSize1="14sp"
+            />
+
+    </LinearLayout>
+</LinearLayout>

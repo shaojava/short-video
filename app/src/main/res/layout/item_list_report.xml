@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yunbao.phonelive.custom.DrawableRadioButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@color/black1"
+    android:button="@null"
+    android:clickable="true"
+    android:gravity="center_vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:textColor="@color/gray2"
+    android:textSize="16sp"
+    app:right_drawable="@drawable/bg_report"
+    />

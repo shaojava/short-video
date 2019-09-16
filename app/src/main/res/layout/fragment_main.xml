@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <FrameLayout
+        android:id="@+id/replaced"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_bottom_height"
+        android:layout_alignParentBottom="true"
+        android:background="@mipmap/bg_home_bottom"
+        android:orientation="horizontal"
+        >
+
+        <com.yunbao.phonelive.custom.DrawableRadioButton
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawablePadding="-3dp"
+            android:gravity="center_horizontal"
+            android:paddingTop="2dp"
+            android:text="@string/home"
+            android:textColor="@color/fg_main"
+            android:textSize="11sp"
+            app:top_drawable="@drawable/bg_main_home"
+            app:top_drawableSize="30dp"
+            />
+
+        <com.yunbao.phonelive.custom.DrawableRadioButton
+            android:id="@+id/btn_follow"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="70dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="-3dp"
+            android:gravity="center_horizontal"
+            android:paddingTop="2dp"
+            android:text="@string/follow"
+            android:textColor="@color/fg_main"
+            android:textSize="11sp"
+            app:top_drawable="@drawable/bg_main_follow"
+            app:top_drawableSize="30dp"
+            />
+
+        <com.yunbao.phonelive.custom.DrawableRadioButton
+            android:id="@+id/btn_msg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="-3dp"
+            android:gravity="center_horizontal"
+            android:paddingTop="2dp"
+            android:text="@string/message"
+            android:textColor="@color/fg_main"
+            android:textSize="11sp"
+            app:top_drawable="@drawable/bg_main_msg"
+            app:top_drawableSize="30dp"
+            />
+
+        <com.yunbao.phonelive.custom.DrawableRadioButton
+            android:id="@+id/btn_me"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="-3dp"
+            android:gravity="center_horizontal"
+            android:paddingTop="2dp"
+            android:text="@string/me"
+            android:textColor="@color/fg_main"
+            android:textSize="11sp"
+            app:top_drawable="@drawable/bg_main_me"
+            app:top_drawableSize="30dp"
+            />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/btn_record"
+        android:layout_width="@dimen/main_bottom_height"
+        android:layout_height="@dimen/main_bottom_height"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="mainClick"
+        android:padding="2dp"
+        android:src="@mipmap/icon_record"
+        />
+
+    <ImageView
+        android:id="@+id/record_tip"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_record"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/icon_no_works"
+        android:visibility="invisible"
+        />
+
+    <TextView
+        android:id="@+id/red_point"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_red_point_2"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:minWidth="16dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:textColor="#fff"
+        android:textSize="10sp"
+        android:translationX="85dp"
+        android:translationY="-28dp"
+        android:visibility="invisible"
+        />
+</RelativeLayout>

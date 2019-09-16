@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/main_bottom_height"
+              android:background="@color/background"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="@color/background"
+            android:gravity="center_horizontal"
+            android:paddingTop="30dp"
+            android:text="@string/message"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+
+        <ImageView
+            android:id="@+id/btn_add_user"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="3dp"
+            android:layout_marginRight="10dp"
+            android:onClick="backClick"
+            android:padding="9dp"
+            android:src="@mipmap/icon_msg_add"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:background="@color/black1"
+        android:orientation="horizontal"
+        >
+
+        <com.yunbao.phonelive.custom.ImageTextView
+            android:id="@+id/btn_fans"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:imageMarginTop="10dp"
+            app:imageSrc="@mipmap/icon_msg_fans"
+            app:imageWidth="50dp"
+            app:text1="@string/fans"
+            app:textColor1="#fff"
+            app:textHeight="20dp"
+            app:textMarginTop="8dp"
+            app:textSize1="14sp"
+            />
+
+        <com.yunbao.phonelive.custom.ImageTextView
+            android:id="@+id/btn_zan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:imageMarginTop="10dp"
+            app:imageSrc="@mipmap/icon_msg_zan"
+            app:imageWidth="50dp"
+            app:text1="@string/zan"
+            app:textColor1="#fff"
+            app:textHeight="20dp"
+            app:textMarginTop="8dp"
+            app:textSize1="14sp"
+            />
+
+        <com.yunbao.phonelive.custom.ImageTextView
+            android:id="@+id/btn_at"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:imageMarginTop="10dp"
+            app:imageSrc="@mipmap/icon_msg_at"
+            app:imageWidth="50dp"
+            app:text1="@string/at_me"
+            app:textColor1="#fff"
+            app:textHeight="20dp"
+            app:textMarginTop="8dp"
+            app:textSize1="14sp"
+            />
+
+        <com.yunbao.phonelive.custom.ImageTextView
+            android:id="@+id/btn_comment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:imageMarginTop="10dp"
+            app:imageSrc="@mipmap/icon_msg_comment"
+            app:imageWidth="50dp"
+            app:text1="@string/comment"
+            app:textColor1="#fff"
+            app:textHeight="20dp"
+            app:textMarginTop="8dp"
+            app:textSize1="14sp"
+            />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        />
+
+
+</LinearLayout>

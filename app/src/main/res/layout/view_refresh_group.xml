@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yunbao.phonelive.custom.RefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:loadMoreEnable="true"
+    app:loadStyle="black"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            />
+
+        <RelativeLayout
+            android:id="@+id/no_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            />
+
+        <LinearLayout
+            android:id="@+id/load_failure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:text="@string/load_failure"
+                android:textColor="@color/gray1"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:id="@+id/btn_reload"
+                android:layout_width="90dp"
+                android:layout_height="36dp"
+                android:background="@color/global"
+                android:gravity="center"
+                android:text="@string/reload"
+                android:textColor="#fff"
+                />
+
+        </LinearLayout>
+
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateDrawable="@drawable/anim_loading"
+            android:indeterminateOnly="true"
+            />
+
+    </RelativeLayout>
+
+</com.yunbao.phonelive.custom.RefreshLayout>

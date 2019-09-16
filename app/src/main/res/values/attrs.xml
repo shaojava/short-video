@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RefreshLayout">
+        <attr name="loadMoreEnable" format="boolean"/>
+        <attr name="refreshEnable" format="boolean"/>
+        <attr name="loadStyle" format="enum">
+            <enum name="black" value="0"/>
+            <enum name="white" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="RefreshView">
+        <attr name="enableLoadMore" format="boolean"/>
+        <attr name="enableRefresh" format="boolean"/>
+        <attr name="showNoData" format="boolean"/>
+        <attr name="showLoading" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="DrawableTextView">
+        <attr name="drawableSize" format="dimension"/>
+        <attr name="top_drawableSize" format="dimension"/>
+        <attr name="left_drawableSize" format="dimension"/>
+        <attr name="right_drawableSize" format="dimension"/>
+        <attr name="bottom_drawableSize" format="dimension"/>
+        <attr name="top_drawable" format="reference"/>
+        <attr name="left_drawable" format="reference"/>
+        <attr name="right_drawable" format="reference"/>
+        <attr name="bottom_drawable" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="MyViewPager">
+        <attr name="canScroll" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="title_textSize" format="dimension"/>
+        <attr name="indicatorWidth" format="dimension"/>
+        <attr name="indicatorHeight" format="dimension"/>
+        <attr name="normalColor" format="color"/>
+        <attr name="lightColor" format="color"/>
+        <attr name="currentItem" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="ImageTextView">
+        <attr name="imageSrc" format="reference"/>
+        <attr name="imageWidth" format="dimension"/>
+        <attr name="text1" format="string"/>
+        <attr name="textColor1" format="color"/>
+        <attr name="textHeight" format="dimension"/>
+        <attr name="textSize1" format="dimension"/>
+        <attr name="textMargin" format="dimension"/>
+        <attr name="textMarginLeft" format="dimension"/>
+        <attr name="textMarginRight" format="dimension"/>
+        <attr name="textMarginTop" format="dimension"/>
+        <attr name="textMarginBottom" format="dimension"/>
+        <attr name="imageMargin" format="dimension"/>
+        <attr name="imageMarginLeft" format="dimension"/>
+        <attr name="imageMarginRight" format="dimension"/>
+        <attr name="imageMarginTop" format="dimension"/>
+        <attr name="imageMarginBottom" format="dimension"/>
+        <attr name="imagePadding" format="dimension"/>
+        <attr name="isChecked" format="boolean"/>
+        <attr name="checkedImageSrc" format="reference"/>
+        <attr name="checkedTextColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="NumberProgressBar">
+        <attr name="progress_current" format="integer"/>
+        <attr name="progress_max" format="integer"/>
+        <attr name="progress_unreached_color" format="color"/>
+        <attr name="progress_reached_color" format="color"/>
+        <attr name="progress_reached_bar_height" format="dimension"/>
+        <attr name="progress_unreached_bar_height" format="dimension"/>
+        <attr name="progress_text_size" format="dimension"/>
+        <attr name="progress_text_color" format="color"/>
+        <attr name="progress_text_offset" format="dimension"/>
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="RangeSlider">
+        <attr name="lineHeight" format="dimension"/>
+        <attr name="thumbWidth" format="dimension"/>
+        <attr name="lineColor" format="color"/>
+        <attr name="maskColor" format="color"/>
+        <attr name="tickCount" format="integer"/>
+        <attr name="leftThumbIndex" format="integer"/>
+        <attr name="rightThumbIndex" format="integer"/>
+        <attr name="leftThumbDrawable" format="reference"/>
+        <attr name="rightThumbDrawable" format="reference"/>
+        <attr name="midThumbDrawable" format="reference"/>
+
+    </declare-styleable>
+    <declare-styleable name="TextSeekBar">
+        <attr name="text2" format="string"/>
+        <attr name="progressVal" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="LoadingBar">
+        <attr name="LoadingBgColor" format="color"/>
+        <attr name="LoadingFgColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="MyImageView2">
+        <attr name="imageRes" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="BubbleLayout">
+        <attr name="bubbleBgColor" format="color"/>
+        <attr name="bubbleRadius" format="dimension"/>
+        <attr name="arrowWidth" format="dimension"/>
+        <attr name="arrowHeight" format="dimension"/>
+        <attr name="arrowPositionY" format="dimension"/>
+        <attr name="arrowDirecrion" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="AnimImageView">
+        <attr name="srcId" format="reference"/>
+        <attr name="interval" format="integer"/>
+    </declare-styleable>
+</resources>

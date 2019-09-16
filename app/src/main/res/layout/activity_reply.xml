@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/root"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    >
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/view_title"
+        />
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_bottom_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black1"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+        <com.yunbao.phonelive.custom.AtEditText
+            android:id="@+id/comment_edit"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_comment_input"
+            android:gravity="center_vertical"
+            android:hint="说点什么吧~"
+            android:imeActionLabel="@string/send"
+            android:imeOptions="actionSend"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textColorHint="@color/gray1"
+            android:textSize="14sp"
+            />
+
+        <ImageView
+            android:id="@+id/btn_at"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:src="@mipmap/icon_at"
+            />
+
+        <!--<ImageView-->
+            <!--android:id="@+id/btn_face"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:padding="3dp"-->
+            <!--android:src="@mipmap/icon_chat_face"-->
+            <!--android:visibility="gone"-->
+            <!--/>-->
+    </LinearLayout>
+
+
+    <com.yunbao.phonelive.custom.RefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        android:layout_below="@id/top"
+        app:loadMoreEnable="true"
+        app:loadStyle="black"
+        app:refreshEnable="false"
+        >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </com.yunbao.phonelive.custom.RefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/loading_reply"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_centerInParent="true"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@drawable/anim_loading"
+        android:indeterminateOnly="true"
+        />
+
+</RelativeLayout>

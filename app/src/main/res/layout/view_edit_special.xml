@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/curTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="0.00s"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            >
+
+            <com.yunbao.video.custom.VideoProgressView
+                android:id="@+id/progress_view"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/global"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#80333333"
+            >
+
+            <TextView
+                android:id="@+id/group_cut"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/cut_tip"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:visibility="visible"
+                />
+
+
+            <RelativeLayout
+                android:id="@+id/group_time_special"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/choose_special"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    >
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/img_1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:clickable="false"
+                        android:src="@mipmap/icon_effect_1"
+                        />
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/img_2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@id/img_1"
+                        android:clickable="false"
+                        android:src="@mipmap/icon_effect_2"
+                        android:visibility="gone"
+                        />
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/img_3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@id/img_1"
+                        android:clickable="false"
+                        android:src="@mipmap/icon_effect_3"
+                        />
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/img_4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@id/img_3"
+                        android:clickable="false"
+                        android:src="@mipmap/icon_effect_4"
+                        />
+
+                    <!--此处是为了遮盖gif的锯齿-->
+                    <View
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_alignLeft="@id/img_1"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/bg_gif_cover"
+                        />
+
+                    <View
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_alignLeft="@id/img_2"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="3dp"
+                        android:visibility="gone"
+                        android:background="@drawable/bg_gif_cover"
+                        />
+
+                    <View
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_alignLeft="@id/img_3"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/bg_gif_cover"
+                        />
+
+                    <View
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_alignLeft="@id/img_4"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/bg_gif_cover"
+                        />
+                </RelativeLayout>
+
+                <RadioGroup
+                    android:id="@+id/group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/btn_time_none"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/bg_btn_special"
+                        android:button="@null"
+                        android:checked="true"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/btn_time_daofang"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="30dp"
+                        android:background="@drawable/bg_btn_special"
+                        android:visibility="gone"
+                        android:button="@null"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/btn_time_fanfu"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="30dp"
+                        android:background="@drawable/bg_btn_special"
+                        android:button="@null"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/btn_time_ndz"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="30dp"
+                        android:background="@drawable/bg_btn_special"
+                        android:button="@null"
+                        />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_alignLeft="@id/group"
+                    android:layout_alignRight="@id/group"
+                    android:layout_below="@id/group"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/none"
+                        android:textColor="#fff"
+                        android:textSize="12sp"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/time_daofang"
+                        android:textColor="#fff"
+                        android:visibility="gone"
+                        android:textSize="12sp"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/time_fanfu"
+                        android:textColor="#fff"
+                        android:textSize="12sp"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/time_ndz"
+                        android:textColor="#fff"
+                        android:textSize="12sp"
+                        />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/group_other_special"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/long_press_add_special"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/group_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    >
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/btn_other_1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@mipmap/icon_effect_5"
+                        />
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/btn_other_2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@id/btn_other_1"
+                        android:src="@mipmap/icon_effect_6"
+                        />
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/btn_other_3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@id/btn_other_2"
+                        android:clickable="false"
+                        android:src="@mipmap/icon_effect_7"
+                        />
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/btn_other_4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@id/btn_other_3"
+                        android:clickable="false"
+                        android:src="@mipmap/icon_effect_8"
+                        />
+
+                    <!--此处是为了遮盖gif的锯齿-->
+                    <View
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_alignLeft="@id/btn_other_1"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/bg_gif_cover"
+                        />
+
+                    <View
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_alignLeft="@id/btn_other_2"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/bg_gif_cover"
+                        />
+
+                    <View
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_alignLeft="@id/btn_other_3"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/bg_gif_cover"
+                        />
+
+                    <View
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_alignLeft="@id/btn_other_4"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/bg_gif_cover"
+                        />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_alignLeft="@id/group_2"
+                    android:layout_alignRight="@id/group_2"
+                    android:layout_below="@id/group_2"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/other_1"
+                        android:textColor="#fff"
+                        android:textSize="12sp"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/other_2"
+                        android:textColor="#fff"
+                        android:textSize="12sp"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/other_3"
+                        android:textColor="#fff"
+                        android:textSize="12sp"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/other_4"
+                        android:textColor="#fff"
+                        android:textSize="12sp"
+                        />
+
+                </LinearLayout>
+
+                <com.yunbao.phonelive.custom.DrawableRadioButton
+                    android:id="@+id/btn_cancel_other_special"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/bg_btn_cancel_other_special"
+                    android:button="@null"
+                    android:padding="2dp"
+                    android:text="@string/cancel2"
+                    android:textColor="#969696"
+                    android:textSize="12sp"
+                    android:visibility="invisible"
+                    app:drawableSize="14dp"
+                    app:left_drawable="@mipmap/icon_cancel_other_special"
+                    />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#b3333333"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/btn_cut"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_edit_special"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/cut"
+                android:textColor="@color/fg_btn_beauty"
+                android:textSize="14sp"
+                />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#626262"
+                />
+
+            <RadioButton
+                android:id="@+id/btn_time_special"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_edit_special"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/time_special"
+                android:textColor="@color/fg_btn_beauty"
+                android:textSize="14sp"
+                />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#626262"
+                />
+
+            <RadioButton
+                android:id="@+id/btn_other_special"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_edit_special"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/other_special"
+                android:textColor="@color/fg_btn_beauty"
+                android:textSize="14sp"
+                />
+        </RadioGroup>
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/btn_hide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        />
+
+</RelativeLayout>

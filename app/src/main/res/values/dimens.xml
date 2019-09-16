@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="main_bottom_height">46dp</dimen>
+    <dimen name="adversting_width">150dp</dimen>
+</resources>
